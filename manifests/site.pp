@@ -39,7 +39,6 @@ node default {
             "gcc",
             "gdb",
             "git",
-            "jupyter",
             "libxrandr-dev",
             "libncurses5",
             "libncurses5-dev",
@@ -51,7 +50,6 @@ node default {
             "autoconf",
             "wget",
             "python3",
-            "python3-pip",
             "libjson-c-dev",
             "libfuse-dev",
             "sudo",
@@ -60,15 +58,6 @@ node default {
             "libc6-dev-i386",
         ]:
           ensure => installed;
-        [
-          "matplotlib",
-          "numpy",
-          "grpcio",
-          "grpcio-tools",
-        ]:
-          ensure   => installed,
-          provider => pip3,
-          require  => Package[python3-pip];
     }
 
     # Clone the skeleton files
